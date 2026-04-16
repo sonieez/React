@@ -6,7 +6,7 @@ A component can be as small as a button, or as large as an entire page.
 
 <h3>Creating Components</h3>
 
-```javascript
+```jsx
 function MyButton() {
   return (
     <button>I'm a button</button>
@@ -17,7 +17,7 @@ function MyButton() {
 
 <h3>Nesting Components</h3>
 
-```javascript
+```jsx
 export default function MyApp() {
   return (
     <div>
