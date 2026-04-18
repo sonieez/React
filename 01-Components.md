@@ -101,3 +101,39 @@ function Button() {
   );
 }
 ```
+
+<h3>Properties</h3>
+
+**props** = read-only properties that are shared between components.
+
+✔️A parent component can send data to a child component.
+
+`<Component key=value />`
+
+For example:
+```jsx
+function App() {
+  return{
+    <>
+      <Student name='Proxima' age={17} isStudent={true}/>
+      <Student name='Sony' age={18} isStudent={true}/>
+    </>
+  );
+}
+```
+
+```jsx
+function Student(props) {
+  return(
+   <div className='student'>
+      <p>Name: {props.name}</p>
+      <p>Age: {props.age}</p>
+      <p>Student: {props.isStudent ? "Yes" : 'No'}</p>
+    </div>
+  );
+}
+```
+
+✔️Key-value data is stored in props argument in the Component. To access the the value= `props.key`
+
+✔️If value is not string, must write in `{}`.
