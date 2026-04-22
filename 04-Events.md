@@ -76,3 +76,71 @@ export default Picture
 ```jsx
 <button onDoubleClick={(event) => handleClick(event)}>Click me</button>
 ```
+
+<h2>Event Handlers</h2>
+
+<h3>onChange</h3>
+
+Event handler used primarily with form elements ex. `<input>`, `<textarea>`, `<select>`, `<radio>`.
+
+✔️Triggers a function every time the value of the input changes.
+
+1️⃣ Input:
+```jsx
+const [name, setName] = useState('');
+function handleNameChange(event) {
+  setName(event.target.value);
+}
+return(
+  <input value={name} onChange={handleNameChange}></input>
+  <p>Name: {name}</p>
+)
+```
+
+2️⃣ Text area:
+```jsx
+const [comment, setComment] = useState("");
+function handleCommentChange(event) {
+  setComment(event.target.value);
+}
+return(
+  <textarea value={comment} onChange={handleCommentChange} placeholder='Enter delivery instructions'></textarea>
+  <p>Comment: {comment}</p>
+)
+```
+
+3️⃣ Select:
+```jsx
+const [payment, setPayment] = useState("");
+function handlePaymentChange(event) {
+  setPayment(event.target.value);
+}
+return(
+  <select value={payment} onChange={handlePaymentChange}>
+    <option value=''>Select an option</option>
+    <option value='Visa'>Visa</option>
+    <option value='Mastercard'>MasterCard</option>
+    <option value='Giftcard'>GiftCard</option>
+  </select>
+  <p>Payment: {payment}</p>
+)
+```
+
+4️⃣ Radio:
+```jsx
+const [shipping, setShipping] = useState('');
+function handleShippingChange(event) {
+  setShipping(event.target.value);
+}
+return(
+  <label>
+    <input type='radio' value='Pick Up' checked={shipping==='Pick Up'} onChange={handleShippingChange}></input>
+    Pick Up
+  </label><br/>
+  <label>
+    <input type='radio' value='Delivery' checked={shipping==='Delivery'} onChange={handleShippingChange}></input>
+    Delivery
+  </label>
+  <p>Shipping: {shipping}</p>
+)  
+```
