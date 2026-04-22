@@ -2,8 +2,9 @@ React lets you add event handlers to your JSX.
 Event handlers are your own functions that will be triggered in response to interactions like 
 clicking, hovering, focusing form inputs, and so on.
 
-<h2>Click events</h2>
+<h2>Events</h2>
 
+<h3>Click Event</h3>
 Click event = an interaction when a user clicks on a specific element.
 
 ✔️We can respond to clicks by passing a callback to the `onClick` event handler.
@@ -34,7 +35,7 @@ function Button() {
 export default Button
 ```
 
-<h3>Event</h3>
+<h4>Event</h4>
 
 To use the built-in event functions or methods we can save the event object inside the 
 argument and use it:
@@ -96,6 +97,8 @@ return(
   <p>Name: {name}</p>
 )
 ```
+`onChange` fires every time the user types a character. You use it to call your setter.
+jsx
 
 2️⃣ Text area:
 ```jsx
@@ -144,3 +147,5 @@ return(
   <p>Shipping: {shipping}</p>
 )  
 ```
+So, in general:
+<h4><b>onChange → calls setter → state updates → UI re-renders</b></h4>
