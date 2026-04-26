@@ -38,3 +38,34 @@ const toggleSwitch = () => {
   setIsOn(!isOn);    //if true --> false, if false --> true
 }
 ```
+
+<h3>Updater Function:</h3>
+
+A function passed as an argument to `setState()` usually. For example:
+
+Instead of `setYear(year+1)`, we write `setYear(updater function)`.
+
+✔️Allow for safe updates based on the previous state.
+
+✔️Used with multiple state updates and asynchronous functions.
+
+If we write `setState()` function multiple times in the same function to update the same state variable, React batches together state updates for performance reasons:
+```jsx
+function increment(){
+  setCount(count+1);
+  setCount(count+1);
+  setCount(count+1);
+}
+//Only adds 1
+```
+⭕Uses the *current* state to calculate the *next* state.
+
+So, we must use updater function, for example, arrow function to use `setState()` multiple times and React puts it in a queue:
+```jsx
+function increment(){
+  setCount(c => c + 1);
+  setCount(c => c + 1);
+  setCount(c => c + 1);
+}
+```
+⭕Uses the *pending* state to calculate the *next* state.
