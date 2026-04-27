@@ -69,3 +69,23 @@ function increment(){
 }
 ```
 ⭕Uses the *pending* state to calculate the *next* state.
+
+<h5>Update OBJECT</h5>
+
+For example:
+```jsx
+const [car, setCar] = useState({year: 2024, make: 'Ford', model: 'Mustang'});
+
+function handleYearChange(event) {
+    setCar(c => ({...c, year: event.target.value}));
+  }
+  function handleMakeChange(event) {
+    setCar(c => ({...c, make: event.target.value}));
+  }
+  function handleModelChange(event) {
+    setCar(c => ({...c, model: event.target.value}));
+  }
+```
+We use updater function, but adding `{}` to create an object.
+
+✔️`...object` means remaining other object values the same.
