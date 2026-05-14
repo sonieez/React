@@ -117,3 +117,23 @@ return(
 )
 ```
 
+<h2>useEffect()</h2>
+
+React Hook that tells React DO SOME CODE WHEN ... :
+- This component re-renders
+- This component mounts
+- The state of a value
+
+✔️`useEffect(function, [dependencies])`
+
+1. `useEffect(() => {})` - runs after every re-render
+2. `useEffect(() => {}, [])` - runs only on mount
+3. `useEffect(() => {}, [values])` - runs on mount + when value changes
+
+<h5>Uses:</h5>
+
+1. Event listeners
+2. DOM manipulation
+3. Subscription (real-time updates)
+4. Fetching Data from an API
+5. Clean up when a component unmounts
