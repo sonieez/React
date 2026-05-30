@@ -17,7 +17,7 @@ function Button() {
 }
 export default Button
 ```
-We defined the handleClick function and then passed it as a prop to <button>.  
+We defined the handleClick function and then passed it as a prop to `<button>`.  
 `handleClick` is an event handler. Event handler functions:
 
 - Are usually defined inside your components.
