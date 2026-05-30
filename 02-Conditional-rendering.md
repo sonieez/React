@@ -1,8 +1,8 @@
 Conditional rendering allows you what gets rendered in your application based on certain conditions.
 
-✔️In JSX, `{cond ? <A /> : <B />}` means “if cond, render <A />, otherwise <B />”.
+✔️In JSX, `{cond ? <A /> : <B />}` means “if cond, render `<A />`, otherwise `<B />`”.
 
-✔️In JSX, `{cond && <A />}` means “if cond, render <A />, otherwise nothing”.
+✔️In JSX, `{cond && <A />}` means “if cond, render `<A />`, otherwise nothing”.
 
 Example:
 
