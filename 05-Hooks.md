@@ -166,3 +166,47 @@ return(
   </>
 )
 ```
+
+<h2>useContext()</h2>
+React hook that allows you to share values between multiple levels of components
+without passing props through each level
+
+Prop drilling:
+```jsx
+function ComponentA(){
+  const [user, setUser] = useState('sonie');
+  
+  return(
+    <div className='box'>
+      <h1>ComponentA</h1>
+      <h2>{`Hello ${user}`}</h2>
+      <ComponentB user={user}/>
+    </div>
+  );
+}
+
+function ComponentB(props){
+  return(
+    <div className='box'>
+      <h1>ComponentB</h1>
+      <h2>{`Bye ${props.user}`}</h2>
+    </div>
+  );
+}
+```
+Instead of this, we use `useContext()`:
+
+1. Provider Component:
+   ```jsx
+   import {createContext} from 'react';
+   export const MyContext = createContext();
+   <MyContext.Provider value={value}>
+     <Child />
+   </MyContext.Provider>
+   ```
+2. Consumer Components:
+   ```jsx
+   import React, {useContext} from 'react';
+   import {MyContext} from './ComponentA';
+   const value = useContext(MyContext);
+   ```
