@@ -137,3 +137,32 @@ React Hook that tells React DO SOME CODE WHEN ... :
 3. Subscription (real-time updates)
 4. Fetching Data from an API
 5. Clean up when a component unmounts
+
+Example:
+```jsx
+const [count, setCount] = useState(0);
+const [color, setColor] = useState('green');
+
+useEffect(() => {
+  document.title = `Count: ${count} ${color}`;  
+}, [count, color]);   //every time count and color changes -> title changes
+
+function addCount() {
+  setCount(c => c+1);
+}
+function subtractCount() {
+  setCount(c => c-1);
+}
+function changeColor(){
+  setColor(c => c === 'green' ? 'red' : 'green');
+}
+
+return(
+  <>
+    <p style={{color: color}}>Count: {count}</p>
+    <button onClick={addCount}>Add</button>
+    <button onClick={subtractCount}>Subtract</button><br/>
+    <button onClick={changeColor}>Change Color</button>
+  </>
+)
+```
