@@ -201,12 +201,47 @@ Instead of this, we use `useContext()`:
    import {createContext} from 'react';
    export const MyContext = createContext();
    <MyContext.Provider value={value}>
-     <Child />
+     <Child />     
    </MyContext.Provider>
    ```
 2. Consumer Components:
    ```jsx
    import React, {useContext} from 'react';
-   import {MyContext} from './ComponentA';
+   import {MyContext} from './ProviderComponent.jsx';
    const value = useContext(MyContext);
    ```
+
+So, we get:
+```jsx
+//ComponentA
+import { useState, createContext } from "react";
+import ComponentB from "./ComponentB.jsx";
+
+export const UserContext = createContext();
+function ComponentA(){
+  const [user, setUser] = useState('sonie');
+  return(
+    <div className='box'>
+      <h1>ComponentA</h1>
+      <h2>{`Hello ${user}`}</h2>
+      <UserContext.Provider value={user}>
+        <ComponentB user={user}/>
+      </UserContext.Provider>
+    </div>
+  );
+}
+
+//ComponentD
+import React, {useContext} from "react";
+import { UserContext } from "./ComponentA.jsx";
+
+function ComponentD(){
+  const user = useContext(UserContext);
+  return(
+    <div className='box'>
+      <h1>ComponentD</h1>
+      <h2>{`Bye ${user}`}</h2>
+    </div>
+  );
+}
+```
