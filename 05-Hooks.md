@@ -253,3 +253,26 @@ When you want a component to 'remember' some information, but you don't want tha
 1. Accessing/Interacting with DOM elements.
 2. Handling Focus, Animations, adn Transitions.
 3. Managing Timers and Intervals.
+
+✔️`useRef()` returns an object with one property named _current_.
+
+Special attribute to create refereneces to elements:
+```jsx
+<input ref={...}/>
+```
+
+Since in `useState()` component re-renders in every change, we use `useRef()` when we don't need component re-rendered:
+```jsx
+const ref = useRef(0);
+function handleClick(){
+    ref.current++;
+}
+return(<button onClick={handleClick}>Click me 1!</button>)
+//instead of
+let [number, setNumber] = useState(0);
+function handleClick(){
+    //setNumber(n => n+ 1);
+}
+return(<button onClick={handleClick}>Click me 1!</button>)
+//because component re-renders every time number changes
+```
