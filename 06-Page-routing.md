@@ -1,8 +1,8 @@
 <h4>To connect pages in React:</h4>
 
-Firstly we need to download 'react-router-dom' package
+1. Firstly we need to download 'react-router-dom' package
 
-Then, in the `main.jsx` component, we wrap App component with BrowserRouter:
+2. Then, in the `main.jsx` component, we wrap App component with BrowserRouter:
 ```jsx
 import {BrowserRouter} from 'react-router-dom'
 
@@ -15,7 +15,7 @@ createRoot(document.getElementById('root')).render(
 )
 ```
 
-Then, in the `App.jsx` component:
+3. Then, in the `App.jsx` component:
 ```jsx
 import { Routes, Route } from 'react-router-dom'
 ```
@@ -27,7 +27,7 @@ and we add Routes:
 </Routes>
 ```
 
-Lastly, to add linking to the pages, in another Component (for example NavBar):
+4. Lastly, to add linking to the pages, in another Component (for example NavBar):
 ```jsx
 import { Link } from "react-router-dom"
 ```
